@@ -41,3 +41,23 @@ It is a practical class of "Artificial Intelligence Thinking and Problem Solving
 5. 선형대수 연산
   	- 행렬곱:np.dot()
   	- 행렬전치:np.transpose()
+
+### Week7_Evaluation
+1. 정확도(Accuracy)
+	- (예측 결과가 동일한 데이터 건수) / (전체 예측 데이터 건수)
+	- 직관적인 모델 예측 성능
+	- 데이터 분포에 따라 성능이 왜곡되어 나타날 수 있음
+2. 오차 행렬(Confusion matrix)
+	- 정답 클래스와 예측 클래스의 조합을 가지고 2X2 행렬을 만듦
+3. 정밀도(Precision)와 재현율(Recall)
+	- 정밀도 = TP / (FP + TP) → 스팸 메일 탐지 → __확실한 것만 찾자__
+	- 재현율 = TP / (FN + TP) → 코로나 탐지 키트, 사기 탐지 → __웬만하면 다 찾자(조금 틀리더라도)__
+	- 적용하려는 문제에 따라 어떤 성능을 최적화 할지 결정해야 함
+	- 임곗값(threshold)에 따라 정밀도-재현율 트레이드오프(trade-off)가 생김
+4. F1 스코어
+	- 정밀도와 재현율을 결합한 스코어로, 어느 한 쪽으로 치우치지 않을때 높은 값을 가짐
+5. ROC곡선과 AUC
+	- 임곗값을 변경시키며 이진 분류 모델의 성능을 판단하는 그림
+	- AUC: ROC Curve로 만들어지는 면적
+	- sklearn.metrics.roc_curve(): roc curve 그리기
+	- sklearn.metrics.roc_auc_score():이진 분류 모델의 대표적인 성능 지표로 활용
